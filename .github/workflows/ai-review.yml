@@ -7,11 +7,12 @@ on:
 jobs:
   review:
     runs-on: ubuntu-latest
-
     permissions:
       contents: write
       pull-requests: write
-
+    
     steps:
       - uses: actions/checkout@v4
       - uses: egor-zasmuzhets/ai-code-docs-action@feature/improve-analysis
+        with:
+          api-key: ${{ secrets.GROQ_API_KEY }}
