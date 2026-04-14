@@ -14,4 +14,4 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      - uses: egor-zasmuzhets/ai-code-docs-action@v1
+      - uses: egor-zasmuzhets/ai-code-docs-action@feature/improve-analysis
