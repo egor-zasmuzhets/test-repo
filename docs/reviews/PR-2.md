@@ -4,7 +4,7 @@
 >
 > - **PR:** Update math-operations.py
 > - **Author:** @egor-zasmuzhets
-> - **Generated:** 2026-04-14 15:13:19 UTC
+> - **Generated:** 2026-04-14 15:20:29 UTC
 
 ---
 
@@ -12,16 +12,17 @@
 
 | Metric | Value |
 |--------|-------|
-| **Total issues** | 4 |
+| **Total issues** | 7 |
 | 🔴 **High severity** | 0 |
-| 🟡 **Medium severity** | 1 |
-| 🟢 **Low severity** | 3 |
-| **Files with issues** | 1 |
+| 🟡 **Medium severity** | 2 |
+| 🟢 **Low severity** | 5 |
+| **Files with issues** | 2 |
 
 ---
 
 ## 📁 Files Affected
 
+- 🐍 `hello.py` (3 issue(s))
 - 🐍 `math-operations.py` (4 issue(s))
 
 ---
@@ -32,7 +33,23 @@
 ### 🟡 Medium Severity Issues
 
 <details>
-<summary><b>BUG</b>: Division by zero will raise an exception... (line 11)</summary>
+<summary><b>PERFORMANCE</b>: Using print statements for logging can be inefficient... (line 2)</summary>
+
+| Property | Value |
+|----------|-------|
+| **File** | `hello.py` |
+| **Severity** | medium |
+| **Type** | performance |
+| **Language** | python |
+
+**Description:** Using print statements for logging can be inefficient
+
+**Suggestion:** Consider using a logging library instead
+
+</details>
+
+<details>
+<summary><b>BUG</b>: Division by zero will raise an exception... (line 9)</summary>
 
 | Property | Value |
 |----------|-------|
@@ -43,12 +60,44 @@
 
 **Description:** Division by zero will raise an exception
 
-**Suggestion:** Add a check to handle division by zero, e.g., if b == 0: raise ZeroDivisionError('Cannot divide by zero')
+**Suggestion:** Add a check to handle division by zero, e.g., 'if b == 0: return None'
 
 </details>
 
 
 ### 🟢 Low Severity Issues
+
+<details>
+<summary><b>STYLE</b>: Function name 'say_message' could be more descriptive... (line 1)</summary>
+
+| Property | Value |
+|----------|-------|
+| **File** | `hello.py` |
+| **Severity** | low |
+| **Type** | style |
+| **Language** | python |
+
+**Description:** Function name 'say_message' could be more descriptive
+
+**Suggestion:** Consider renaming to 'print_and_return_message'
+
+</details>
+
+<details>
+<summary><b>BUG</b>: The function returns None when echo is True, which may cause unexpected behavior... (line 4)</summary>
+
+| Property | Value |
+|----------|-------|
+| **File** | `hello.py` |
+| **Severity** | low |
+| **Type** | bug |
+| **Language** | python |
+
+**Description:** The function returns None when echo is True, which may cause unexpected behavior
+
+**Suggestion:** Consider returning the message or raising an exception when echo is True
+
+</details>
 
 <details>
 <summary><b>STYLE</b>: Function names do not follow PEP 8 naming conventions... (line 1)</summary>
@@ -62,12 +111,12 @@
 
 **Description:** Function names do not follow PEP 8 naming conventions
 
-**Suggestion:** Use underscore-separated names, e.g., 'add' instead of 'sum'
+**Suggestion:** Use underscore-separated lowercase names, e.g., 'add' instead of 'sum'
 
 </details>
 
 <details>
-<summary><b>STYLE</b>: Typo in function name 'devide', should be 'divide'... (line 13)</summary>
+<summary><b>STYLE</b>: The function 'pprint' is not necessary, as the built-in 'print' function can be ... (line 13)</summary>
 
 | Property | Value |
 |----------|-------|
@@ -76,25 +125,25 @@
 | **Type** | style |
 | **Language** | python |
 
-**Description:** Typo in function name 'devide', should be 'divide'
+**Description:** The function 'pprint' is not necessary, as the built-in 'print' function can be used directly
 
-**Suggestion:** Correct the typo to 'divide'
+**Suggestion:** Remove the 'pprint' function and use 'print' instead
 
 </details>
 
 <details>
-<summary><b>PERFORMANCE</b>: The 'pprint' function only calls the built-in 'print' function... (line 15)</summary>
+<summary><b>STYLE</b>: The function 'pow' can be replaced with the built-in '**' operator... (line 15)</summary>
 
 | Property | Value |
 |----------|-------|
 | **File** | `math-operations.py` |
 | **Severity** | low |
-| **Type** | performance |
+| **Type** | style |
 | **Language** | python |
 
-**Description:** The 'pprint' function only calls the built-in 'print' function
+**Description:** The function 'pow' can be replaced with the built-in '**' operator
 
-**Suggestion:** Consider removing this function or adding additional functionality
+**Suggestion:** Remove the 'pow' function and use 'a ** b' instead
 
 </details>
 
