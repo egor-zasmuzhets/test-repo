@@ -4,16 +4,16 @@
 > 
 > - **PR:** #2 - Update math-operations.py
 > - **Author:** @egor-zasmuzhets
-> - **Generated:** 2026-04-14 13:53:10 UTC
+> - **Generated:** 2026-04-14 15:13:17 UTC
 > - **Branch:** `feature/test1` → `main`
 
 ---
 
 
-## 📄 `math-operations.py`
+## 🐍 `math-operations.py`
 
 ### Description
-This code provides basic arithmetic operations and a function to print output.
+This code provides basic arithmetic operations and a print function
 
 ### Functions
 - `sum`
@@ -21,6 +21,7 @@ This code provides basic arithmetic operations and a function to print output.
 - `subtract`
 - `devide`
 - `pprint`
+- `pow`
 
 ### Classes
 - None
