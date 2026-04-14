@@ -10,3 +10,6 @@ def subtract(a, b):
 
 def devide(a, b):
   return a/b
+
+def pprint(a)
+  print(a)
