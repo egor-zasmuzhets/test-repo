@@ -4,7 +4,7 @@
 >
 > - **PR:** Update math-operations.py
 > - **Author:** @egor-zasmuzhets
-> - **Generated:** 2026-04-14 13:49:00 UTC
+> - **Generated:** 2026-04-14 13:53:11 UTC
 
 ---
 
@@ -13,9 +13,9 @@
 | Metric | Value |
 |--------|-------|
 | **Total issues** | 3 |
-| 🔴 **High severity** | 0 |
+| 🔴 **High severity** | 1 |
 | 🟡 **Medium severity** | 1 |
-| 🟢 **Low severity** | 2 |
+| 🟢 **Low severity** | 1 |
 | **Files with issues** | 1 |
 
 ---
@@ -29,20 +29,38 @@
 ## 🔍 Detailed Issues
 
 
+### 🔴 High Severity Issues
+
+<details>
+<summary><b>BUG</b>: The function 'devide' has a typo and should be 'divide'. Additionally, it does n...</summary>
+
+| Property | Value |
+|----------|-------|
+| **File** | `math-operations.py` |
+| **Severity** | high |
+| **Type** | bug |
+
+**Description:** The function 'devide' has a typo and should be 'divide'. Additionally, it does not handle division by zero.
+
+**Suggestion:** Correct the function name to 'divide' and add a check to handle division by zero, e.g., raise a ZeroDivisionError.
+
+</details>
+
+
 ### 🟡 Medium Severity Issues
 
 <details>
-<summary><b>BUG</b>: Division by zero will raise a ZeroDivisionError...</summary>
+<summary><b>STYLE</b>: The function 'pprint' is missing a colon at the end of its definition line....</summary>
 
 | Property | Value |
 |----------|-------|
 | **File** | `math-operations.py` |
 | **Severity** | medium |
-| **Type** | bug |
+| **Type** | style |
 
-**Description:** Division by zero will raise a ZeroDivisionError
+**Description:** The function 'pprint' is missing a colon at the end of its definition line.
 
-**Suggestion:** Add error handling to handle division by zero
+**Suggestion:** Add a colon at the end of the function definition line.
 
 </details>
 
@@ -50,7 +68,7 @@
 ### 🟢 Low Severity Issues
 
 <details>
-<summary><b>STYLE</b>: Function names do not follow PEP 8 naming conventions (e.g., 'devide' should be ...</summary>
+<summary><b>STYLE</b>: The code does not follow PEP 8 naming conventions for functions....</summary>
 
 | Property | Value |
 |----------|-------|
@@ -58,24 +76,9 @@
 | **Severity** | low |
 | **Type** | style |
 
-**Description:** Function names do not follow PEP 8 naming conventions (e.g., 'devide' should be 'divide')
+**Description:** The code does not follow PEP 8 naming conventions for functions.
 
-**Suggestion:** Rename functions to follow PEP 8 naming conventions
-
-</details>
-
-<details>
-<summary><b>STYLE</b>: Function names are not descriptive (e.g., 'sum' could be 'add')...</summary>
-
-| Property | Value |
-|----------|-------|
-| **File** | `math-operations.py` |
-| **Severity** | low |
-| **Type** | style |
-
-**Description:** Function names are not descriptive (e.g., 'sum' could be 'add')
-
-**Suggestion:** Use more descriptive function names
+**Suggestion:** Rename functions to follow PEP 8 conventions, e.g., 'sum' could be 'add_numbers'.
 
 </details>
 
