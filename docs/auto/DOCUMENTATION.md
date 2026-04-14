@@ -4,7 +4,7 @@
 > 
 > - **PR:** #2 - Update math-operations.py
 > - **Author:** @egor-zasmuzhets
-> - **Generated:** 2026-04-14 13:48:59 UTC
+> - **Generated:** 2026-04-14 13:53:10 UTC
 > - **Branch:** `feature/test1` → `main`
 
 ---
@@ -13,13 +13,14 @@
 ## 📄 `math-operations.py`
 
 ### Description
-This code provides basic arithmetic operations such as addition, subtraction, multiplication, and division.
+This code provides basic arithmetic operations and a function to print output.
 
 ### Functions
 - `sum`
 - `mul`
 - `subtract`
 - `devide`
+- `pprint`
 
 ### Classes
 - None
