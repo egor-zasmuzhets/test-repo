@@ -4,7 +4,7 @@
 >
 > - **PR:** Update math-operations.py
 > - **Author:** @egor-zasmuzhets
-> - **Generated:** 2026-04-14 13:53:11 UTC
+> - **Generated:** 2026-04-14 15:13:19 UTC
 
 ---
 
@@ -12,55 +12,38 @@
 
 | Metric | Value |
 |--------|-------|
-| **Total issues** | 3 |
-| 🔴 **High severity** | 1 |
+| **Total issues** | 4 |
+| 🔴 **High severity** | 0 |
 | 🟡 **Medium severity** | 1 |
-| 🟢 **Low severity** | 1 |
+| 🟢 **Low severity** | 3 |
 | **Files with issues** | 1 |
 
 ---
 
 ## 📁 Files Affected
 
-- `math-operations.py` (3 issue(s))
+- 🐍 `math-operations.py` (4 issue(s))
 
 ---
 
 ## 🔍 Detailed Issues
 
 
-### 🔴 High Severity Issues
-
-<details>
-<summary><b>BUG</b>: The function 'devide' has a typo and should be 'divide'. Additionally, it does n...</summary>
-
-| Property | Value |
-|----------|-------|
-| **File** | `math-operations.py` |
-| **Severity** | high |
-| **Type** | bug |
-
-**Description:** The function 'devide' has a typo and should be 'divide'. Additionally, it does not handle division by zero.
-
-**Suggestion:** Correct the function name to 'divide' and add a check to handle division by zero, e.g., raise a ZeroDivisionError.
-
-</details>
-
-
 ### 🟡 Medium Severity Issues
 
 <details>
-<summary><b>STYLE</b>: The function 'pprint' is missing a colon at the end of its definition line....</summary>
+<summary><b>BUG</b>: Division by zero will raise an exception... (line 11)</summary>
 
 | Property | Value |
 |----------|-------|
 | **File** | `math-operations.py` |
 | **Severity** | medium |
-| **Type** | style |
+| **Type** | bug |
+| **Language** | python |
 
-**Description:** The function 'pprint' is missing a colon at the end of its definition line.
+**Description:** Division by zero will raise an exception
 
-**Suggestion:** Add a colon at the end of the function definition line.
+**Suggestion:** Add a check to handle division by zero, e.g., if b == 0: raise ZeroDivisionError('Cannot divide by zero')
 
 </details>
 
@@ -68,17 +51,50 @@
 ### 🟢 Low Severity Issues
 
 <details>
-<summary><b>STYLE</b>: The code does not follow PEP 8 naming conventions for functions....</summary>
+<summary><b>STYLE</b>: Function names do not follow PEP 8 naming conventions... (line 1)</summary>
 
 | Property | Value |
 |----------|-------|
 | **File** | `math-operations.py` |
 | **Severity** | low |
 | **Type** | style |
+| **Language** | python |
 
-**Description:** The code does not follow PEP 8 naming conventions for functions.
+**Description:** Function names do not follow PEP 8 naming conventions
 
-**Suggestion:** Rename functions to follow PEP 8 conventions, e.g., 'sum' could be 'add_numbers'.
+**Suggestion:** Use underscore-separated names, e.g., 'add' instead of 'sum'
+
+</details>
+
+<details>
+<summary><b>STYLE</b>: Typo in function name 'devide', should be 'divide'... (line 13)</summary>
+
+| Property | Value |
+|----------|-------|
+| **File** | `math-operations.py` |
+| **Severity** | low |
+| **Type** | style |
+| **Language** | python |
+
+**Description:** Typo in function name 'devide', should be 'divide'
+
+**Suggestion:** Correct the typo to 'divide'
+
+</details>
+
+<details>
+<summary><b>PERFORMANCE</b>: The 'pprint' function only calls the built-in 'print' function... (line 15)</summary>
+
+| Property | Value |
+|----------|-------|
+| **File** | `math-operations.py` |
+| **Severity** | low |
+| **Type** | performance |
+| **Language** | python |
+
+**Description:** The 'pprint' function only calls the built-in 'print' function
+
+**Suggestion:** Consider removing this function or adding additional functionality
 
 </details>
 
