@@ -5,3 +5,5 @@ def sum(a, b):
 def mul(a, b):
   return a*b
 
+def subtract(a, b):
+  pass
