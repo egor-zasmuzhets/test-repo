@@ -2,52 +2,95 @@
 
 > **PR:** testing github models requests
 > **Author:** @egor-zasmuzhets
-> **Generated:** 2026-04-16 13:09:08 UTC
+> **Generated:** 2026-04-16 15:12:36 UTC
 
 ## Summary
 
 | Severity | Count |
 |----------|-------|
-| 🔴 High | 1 |
-| 🟡 Medium | 3 |
+| 🔴 High | 2 |
+| 🟡 Medium | 4 |
 | 🟢 Low | 2 |
-| **Total** | 6 |
+| **Total** | 8 |
 
-## Details
+## Detailed Issues
 
 
-### 🟢 SECURITY
-- **File:** `.github/workflows/ai-review.yml`
-- **Line:** 10
-- **Description:** The API key is stored as a secret, but it's still being used directly in the workflow. Consider using a more secure method to handle sensitive data.
-- **Suggestion:** Use an environment variable or a secure storage mechanism to store the API key.
+### 🟡 SECURITY (line 18)
 
-### 🟡 PERFORMANCE
-- **File:** `.github/workflows/ai-review.yml`
-- **Line:** 5
-- **Description:** The workflow runs on every pull request event (opened and synchronized). This might lead to unnecessary runs and increased usage of GitHub Actions minutes.
-- **Suggestion:** Consider filtering the events or using a more specific trigger to reduce unnecessary runs.
+| Property | Value |
+|----------|-------|
+| **File** | `.github/workflows/ai-review.yml` |
+| **Code** | `api-key: ${{ secrets.GROQ_API_KEY }}` |
+| **Description** | The API key is stored as a secret, but it's still being used directly in the workflow. Consider using a more secure method to handle sensitive information. |
+| **Suggestion** | Use an environment variable or a secure token instead of directly referencing the secret. |
 
-### 🟡 PERFORMANCE
-- **File:** `titanic.py`
-- **Line:** 0
-- **Description:** The code uses multiple LabelEncoders, which can lead to inconsistencies if not handled properly. Consider using a single LabelEncoder or a more robust encoding method.
-- **Suggestion:** Use a single LabelEncoder or consider using OrdinalEncoder or OneHotEncoder instead.
 
-### 🟢 STYLE
-- **File:** `titanic.py`
-- **Line:** 0
-- **Description:** The code has some repetitive lines, such as the encoding of categorical features. Consider using a loop or a separate function to improve readability and maintainability.
-- **Suggestion:** Extract a separate function for encoding categorical features to reduce repetition.
+### 🟢 STYLE (line 2)
 
-### 🔴 BUG
-- **File:** `titanic.py`
-- **Line:** 0
-- **Description:** The code assumes that the input data will always have the required columns. However, if a column is missing, the code will raise an error. Consider adding error handling to handle such scenarios.
-- **Suggestion:** Add try-except blocks to handle missing columns and provide informative error messages.
+| Property | Value |
+|----------|-------|
+| **File** | `.github/workflows/ai-review.yml` |
+| **Description** | There is an empty line in the YAML file, which can make the code harder to read. |
+| **Suggestion** | Remove empty lines to improve code readability. |
 
-### 🟡 SECURITY
-- **File:** `titanic.py`
-- **Line:** 0
-- **Description:** The code uses the 'random_state' parameter in the RandomForestRegressor, but it is set to a fixed value. Consider using a more secure method to generate random numbers.
-- **Suggestion:** Use a secure method to generate random numbers, such as using the 'secrets' module.
+
+### 🔴 BUG (line 31)
+
+| Property | Value |
+|----------|-------|
+| **File** | `titanic.py` |
+| **Code** | `cabin_column = df_X["Cabin"].fillna("Unknown").apply(lambda row: row[0])` |
+| **Description** | The variable df_X is not defined anywhere in the code. It should be X instead of df_X. |
+| **Suggestion** | Replace df_X with X |
+
+
+### 🟡 PERFORMANCE (line 83)
+
+| Property | Value |
+|----------|-------|
+| **File** | `titanic.py` |
+| **Code** | `rfr_imputation_age = RandomForestRegressor(n_estimators=100, max_depth=3, random_state=42)` |
+| **Description** | The number of estimators in the RandomForestRegressor is set to 100. This could be computationally expensive for large datasets. Consider reducing the number of estimators or using a more efficient algorithm. |
+| **Suggestion** | Consider using a more efficient algorithm or reducing the number of estimators |
+
+
+### 🟢 STYLE (line 5)
+
+| Property | Value |
+|----------|-------|
+| **File** | `titanic.py` |
+| **Code** | `from sklearn.ensemble import RandomForestRegressor` |
+| **Description** | The import statement for RandomForestRegressor is repeated. Remove the duplicate import statement. |
+| **Suggestion** | Remove the duplicate import statement |
+
+
+### 🟡 BUG (line 93)
+
+| Property | Value |
+|----------|-------|
+| **File** | `titanic.py` |
+| **Code** | `return None` |
+| **Description** | The return statement is unreachable because it is after a raise statement. Remove the return statement. |
+| **Suggestion** | Remove the return statement |
+
+
+### 🟡 PERFORMANCE (line 120)
+
+| Property | Value |
+|----------|-------|
+| **File** | `titanic.py` |
+| **Code** | `X_transform["Fare"] = X_transform["Fare"].fillna(X_transform["Fare"].mean())` |
+| **Description** | The mean of the Fare column is calculated every time the transform method is called. Consider calculating the mean in the fit method and storing it in an instance variable. |
+| **Suggestion** | Calculate the mean in the fit method and store it in an instance variable |
+
+
+### 🔴 BUG (line 141)
+
+| Property | Value |
+|----------|-------|
+| **File** | `titanic.py` |
+| **Code** | `X_transform.loc[X_transform["Age"].isna(), "AgeBins"] = self.imputations["AgeBins"].predict(X_transf` |
+| **Description** | The predict method is called on self.imputations["AgeBins"], but self.imputations["AgeBins"] is not a trained model. It should be the trained RandomForestRegressor model. |
+| **Suggestion** | Replace self.imputations["AgeBins"] with the trained RandomForestRegressor model |
+
